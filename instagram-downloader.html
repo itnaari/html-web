@@ -1,0 +1,533 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Instagram Profile Picture Downloader - Instadp</title>
+	<meta name="description" content="View and Download Instagram profile pictures anonymously to your device.">
+	<base href="https://www.instadp.com/">
+
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<meta property="og:image" content="images/facebook-share.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+<link rel="manifest" href="images/favicon/site.webmanifest">
+<link href="assets/css/style.css" rel="stylesheet">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="msapplication-navbutton-color" content="#FFFFFF">
+<meta name="apple-mobile-web-app-status-bar-style" content="#FFFFFF">
+<meta name="apple-itunes-app" content="app-id=651309421">
+<link rel="stylesheet" href="assets/css/style.css>
+<script src="scripts/jquery.js?v=5"></script>
+<script src="scripts/functions.js?v=8"></script>
+<script src="scripts/cookie.js?v=10"></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+
+	<script type="application/ld+json">
+	{
+	  "@context": "http://schema.org",
+	  "@type": "BreadcrumbList",
+	  "itemListElement": [{
+	    "@type": "ListItem",
+	    "position": 1,
+	    "item": {
+	      "@id": "https://www.instadp.com/",
+	      "name": "instadp"
+	    }
+	  },{
+	    "@type": "ListItem",
+	    "position": 2,
+	    "item": {
+	      "@id": "https://www.instadp.com/instagram-tools",
+	      "name": "instagram"
+	    }
+	  },{
+	    "@type": "ListItem",
+	    "position": 3,
+	    "item": {
+	      "@id": "https://www.instadp.com/instagram-tools/profile-picture-downloader",
+	      "name": "profile downloader"
+	    }
+	  }]
+	}
+	</script>
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3398778452569287" crossorigin="anonymous"></script>
+</head>
+
+
+<body class="darkmode">
+
+
+<!-- Header -->
+
+<center class="header-ad">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3398778452569287"
+     crossorigin="anonymous"></script>
+	<!-- Instadp [Nav]  -->
+	<ins class="adsbygoogle"
+	     style="display:block"
+	     data-ad-client="ca-pub-3398778452569287"
+	     data-ad-slot="2743216559"
+	     data-ad-format="auto"
+	     data-full-width-responsive="true"></ins>
+	<script>
+	     (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+</center>
+
+<div class="nav-skeleton"></div>
+
+<header class="nav">
+	<div class="centered">
+		<a class="logo-btn" href="/">Instadp</a>
+		<div class="menu-btn"></div>
+	</div>
+</header>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	function sticktothetop() {
+	    var window_top = $(window).scrollTop();
+	    var top = $('.nav-skeleton').offset().top;
+	    if (window_top > top) {
+	        $('body').addClass('scrolled');
+	        $('.nav-skeleton').height(44);
+	    } else {
+	        $('body').removeClass('scrolled');
+	        $('.nav-skeleton').height(1);
+	    }
+	}
+	$(function() {
+	    $(window).scroll(sticktothetop);
+	    sticktothetop();
+	});
+});
+</script>
+
+<!-- Content -->
+<div class="page">
+	<div class="centered">
+
+		<div class="header">
+			<h1 class="heading">Instagram Profile Picture Downloader</h1>
+			<p class="desc">Search and Download Instagram profile pictures to your device</p>
+		</div>
+
+
+		<!-- Tool Tabs -->
+		<ul class="tool-tabs">
+			<li class="tool profile-pictures selected"><a class="link" title="Download Instagram Profile Pictures" href="instagram-tools/profile-picture-downloader"><i class="icon"></i><span class="name">Instadp</span></a></li>
+			<li class="tool instagram-stories"><a class="link" title="Download Instagram Stories" href="instagram-tools/story-downloader"><i class="icon"></i><span class="name">Stories</span></a></li>
+			<li class="tool instagram-reels"><a class="link" title="Download Instagram Reels" href="instagram-tools/reel-downloader"><i class="icon"></i><span class="name">Reels</span></a></li>
+			<li class="tool instagram-videos"><a class="link" title="Download Instagram Videos" href="instagram-tools/video-downloader"><i class="icon"></i><span class="name">Videos</span></a></li>
+			<li class="tool instagram-photos"><a class="link" title="Download Instagram Photos" href="instagram-tools/photo-downloader"><i class="icon"></i><span class="name">Photos</span></a></li>
+		</ul>
+
+
+		<div class="tool-section profile-pictures">
+
+			<div class="search-bar">
+				<div class="tool-icon"></div>
+				<input class="search-input" placeholder="Username">
+				<input class="search-btn" type="button" value="">
+				<input class="reset-btn" type="button" value="">
+				<div class="search-loader"></div>
+			</div>
+
+			<a class="continue-btn" href="#">Continue</a>
+
+			<div class="error-alert"></div>
+
+			<script type="text/javascript">
+			function request_search(){
+				document.querySelector('.tool-section').classList.remove('loading');
+				document.querySelector('.tool-section').classList.remove('continue');
+				document.querySelector('.tool-section').classList.remove('error');
+
+				var value = document.querySelector('.tool-section .search-bar .search-input').value.trim();
+				if(value.indexOf('://') > 0){
+					var parts = value.split('://');
+					value = parts[1];
+				}
+				var parts = value.split('/');
+				if(parts.length > 1){
+					if(parts[0].toLowerCase().indexOf('instagram.com') >= 0){
+						value = parts[1];
+						value = value.split('?')[0];
+					}
+				}
+				if(!value.isValidInstaUsername()){
+					document.querySelector('.tool-section .error-alert').innerText = 'Try without the @ sign or check your spelling.';
+					document.querySelector('.tool-section').classList.add('error');
+					return;
+				}
+				if(value.length > 0){
+
+					document.querySelector('.tool-section').classList.add('loading');
+
+					ga('send', 'pageview', 'instagram-tools/profile-picture-downloader/search');
+
+					setTimeout(function(){
+						search(value);
+					}, 3000);
+				}
+			}
+			function search(s){
+				var value = document.querySelector('.tool-section .search-bar .search-input').value.trim();
+				if(value.indexOf('://') > 0){
+					var parts = value.split('://');
+					value = parts[1];
+				}
+				var parts = value.split('/');
+				if(parts.length > 1){
+					if(parts[0].toLowerCase().indexOf('instagram.com') >= 0){
+						value = parts[1];
+						value = value.split('?')[0];
+					}
+				}
+				if(value == s && value.length > 0 && value.isValidInstaUsername()){
+
+					value = value.replace('@', '');
+
+					document.querySelector('.tool-section').classList.remove('loading');
+					document.querySelector('.tool-section').classList.add('continue');
+					document.querySelector('.tool-section .continue-btn').setAttribute('href', 'instagram-tools/profile-picture-downloader/' + value);
+				}
+			}
+			document.querySelector('.tool-section .search-bar .search-input').onkeyup = function(e){
+				e.preventDefault();
+
+				if(e.keyCode === 13){
+					if(!document.querySelector('.tool-section').classList.contains('continue')){
+			    		request_search();
+			    	}
+			    	return false;
+				}
+
+				if(document.querySelector('.tool-section').classList.contains('continue') ||
+					document.querySelector('.tool-section').classList.contains('error')){
+					document.querySelector('.tool-section').classList.remove('continue');
+					document.querySelector('.tool-section').classList.remove('error');
+				}
+			};
+			document.querySelector('.tool-section .search-bar .search-input').onchange = function(e){
+				e.preventDefault();
+
+				if(document.querySelector('.tool-section').classList.contains('continue') ||
+					document.querySelector('.tool-section').classList.contains('error')){
+					document.querySelector('.tool-section').classList.remove('continue');
+					document.querySelector('.tool-section').classList.remove('error');
+				}
+			}
+			document.querySelector('.tool-section .search-bar .reset-btn').onclick = function(e){
+				e.preventDefault();
+
+				document.querySelector('.tool-section').classList.remove('continue');
+				document.querySelector('.tool-section').classList.remove('error');
+				document.querySelector('.tool-section .search-bar .search-input').value = '';
+			};
+			document.querySelector('.tool-section .search-bar .search-btn').onclick = function(e){
+				e.preventDefault();
+				
+				request_search();
+			};
+			</script>
+
+			<div class="search-history">
+
+				<div class="toggle-bar"></div>
+
+				<div class="list">
+				</div>
+
+			</div>
+
+			<script type="text/javascript" id="script_history">
+			function _getHistory(key) {
+				var history = _getCookie(key);
+				if(history != undefined){
+					var cookies = decodeURIComponent(_getCookie(key));
+					if(cookies != 'undefined' && cookies.length > 0){
+						if(cookies.isJson()){
+							cookies = JSON.parse(cookies);
+							var list = document.querySelector('.search-history .list');
+							list.innerHTML = '';
+							if(cookies.length > 0){
+								document.querySelector('.tool-section').classList.add('has-history');
+								for(var i = 0; i < cookies.length; i++){
+									var cookie = cookies[i];
+									if(cookie != null && cookie.id != null && cookie.username != null && cookie.picture != null){
+										var div = document.createElement('div');
+										div.setAttribute('data-id', cookie.id);
+										div.classList.add('user');
+										if(cookie.verified != null && cookie.verified === true){
+											div.classList.add('verified');
+										}
+										var a = document.createElement('a');
+										a.classList.add('link');
+										a.setAttribute('href', 'instagram-tools/profile-picture-downloader/' + cookie.username);
+											var div2 = document.createElement('div');
+											div2.classList.add('avatar');
+												var img = document.createElement('img');
+												img.classList.add('img');
+												img.setAttribute('src', 'embedded/' + btoa(cookie.picture) + '.jpg');
+												div2.appendChild(img);
+											a.appendChild(div2);
+											var span = document.createElement('span');
+											span.classList.add('username');
+												var span2 = document.createElement('span');
+												span2.innerText = cookie.username;
+												span.appendChild(span2);
+												var i2 = document.createElement('i');
+												i2.classList.add('verified');
+												span.appendChild(i2);
+											a.appendChild(span);
+											var span = document.createElement('span');
+											span.classList.add('text');
+											if(cookie.fullname != null && cookie.fullname.length > 0){
+												span.innerText = cookie.fullname.replace(/\+/g, ' ');
+											}
+											a.appendChild(span);
+										div.appendChild(a);
+										var div2 = document.createElement('div');
+										div2.classList.add('remove-btn');
+										div2.onclick = function(e){
+											e.preventDefault();
+
+											_removeCookie(this.parentNode.getAttribute('data-id'),key);
+											_getHistory(key);
+										};
+										div.appendChild(div2);
+										list.appendChild(div);
+									}
+								}
+								document.querySelector('.search-history .toggle-bar').innerText = list.children.length + ' History';
+							} else {
+								document.querySelector('.tool-section').classList.remove('has-history');
+							}
+						}
+					}
+				}
+				document.querySelector('.tool-section').removeChild(document.getElementById('script_history'));
+			}
+			_getHistory('history:instagram:profile');
+			</script>
+
+		</div>
+
+
+		<center class="ad">
+						<!-- Instadp [Tools] [Profile] [Desktop] -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-3398778452569287"
+			     data-ad-slot="9981937540"
+			     data-ad-format="auto"
+			     data-full-width-responsive="true"></ins>
+						<script>
+			    (adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</center>
+
+
+		<div class="tools-list">
+
+
+			<div class="tools-header">
+				<h2 class="heading">Download Insta DP and More</h2>
+				<p class="desc">Use our Instagram downloader tools to keep the best moments on your device forever</p>
+			</div>
+
+			<div class="list">
+				<div class="tool profile-pictures"><a class="link" href="instagram-tools/profile-picture-downloader"><i class="icon"></i><span class="title">Profile Pictures Downloader</span><div class="arrow"></div></a><i class="bg-icon"></i></div>
+				<div class="tool instagram-videos"><a class="link" href="instagram-tools/video-downloader"><i class="icon"></i><span class="title">Instagram Videos Downloader</span><div class="arrow"></div></a><i class="bg-icon"></i></div>
+				<div class="tool instagram-photos"><a class="link" href="instagram-tools/photo-downloader"><i class="icon"></i><span class="title">Instagram Photos Downloader</span><div class="arrow"></div></a><i class="bg-icon"></i></div>
+				<div class="tool instagram-reels"><a class="link" href="instagram-tools/reel-downloader"><i class="icon"></i><span class="title">Instagram Reels Downloader</span><div class="arrow"></div></a><i class="bg-icon"></i></div>
+				<div class="tool instagram-stories"><a class="link" href="instagram-tools/story-downloader"><i class="icon"></i><span class="title">Instagram Stories Downloader</span><div class="arrow"></div></a><i class="bg-icon"></i></div>
+			</div>
+
+		</div>
+
+
+
+		<div class="content">
+
+			<h2 class="heading">What is an Instagram Profile Picture Downloader?</h2>
+			<p>Instagram allows users to post all sorts of interesting content and allows you to zoom in on posts. When it comes to the user’s profile picture, you are not able to zoom in or download it. With Instagram Full-Size Profile Picture Downloader, you can view users’ Instagram profile pictures in its original quality and save it to your device. The downloader is completely free and only requires you to enter the account’s username for the magic to happen.</p>
+
+
+			<h2 class="heading">How to Download Instagram Profile Picture</h2>
+			<p>We know your time is valuable, so we made the website work as efficiently as possible. To begin, simply find the account’s username. Enter the account username into our search bar, conveniently located at the top of the webpage. Once the search is completed, you will be redirected to the search results page. Navigate to the “Full Size” option underneath the profile picture, and that’s where you will see the profile picture in its original quality and ready for download. Tap the download button below the image, and you’re done! It’s as simple as that.</p>
+
+
+			<h2 class="heading">Why Download Instagram Profile Pictures?</h2>
+			<p>One of the main reasons you would want to download a profile picture is if someone is trying to add you on Instagram, yet their profile is private, and you can’t identify the person based on the tiny profile picture. If you’re a single person using Instagram to meet new people, this tool is especially helpful. Before giving a follower the wrong impression by instantly following back, you may want to know what the user looks like. If only you could zoom in on their profile picture to get a closer look.</p>
+			<p>Well, now you can! Use our downloader to see all the details of the picture in its original quality and size. Our tool speeds up your decision-making process when it comes to determining whether you want to follow someone back.</p>
+			<p>Instagram is not only a tool for individual users but for business accounts as well. For that reason, we understand that people can have various motives for saving someone else’s profile picture onto their devices.</p>
+			<p>You may want to use a company’s business logo for a project or you simply get inspired by a creative landscape picture used as someone’s profile picture.</p>
+			<p>Whether you want to use our website for business or personal reasons, our Instagram Profile Picture downloader will provide you with satisfactory results.</p>
+
+
+			<h2 class="heading">Can I download profile pictures from private accounts?</h2>
+			<p>Most features on our website are only available for public accounts. However, our profile picture downloader allows you to download anyone’s profile picture in full size, even if the account is private! We respect the privacy of all users, and the profile picture is the only photo available to the public.</p> 
+
+
+			<h2 class="heading">Will users be notified if I Download their Profile Picture?</h2>
+			<p>Our downloader tools are completely secure and anonymous. We understand and respect that your privacy is important, so we built our tools accordingly. We never store any of your private data. You can enjoy using our website with peace of mind.</p>
+
+		</div>
+
+
+		<!-- Recommended Articles 
+		<div class="articles">
+	<h2 class="heading">Recommended Articles</h2>
+	<div class="list">
+				<div class="article">
+			<a class="link" href="article/2/how-to-check-if-you-accidently-liked-any-instagram-posts.html">
+								<div class="thumbnail"><img class="img" src="https://www.instadp.com/images/articles/How-to-Check-if-You-Accidently-Liked-Any-Instagram-Posts.png" alt="How to Check if You Accidently Liked Any Instagram Posts"></div>
+								<div class="title">How to Check if You Accidently Liked Any Instagram Posts</div>
+			</a>
+		</div>
+				<div class="article">
+			<a class="link" href="article/16/your-complete-guide-to-reposting-content-on-instagram.html">
+								<div class="thumbnail"><img class="img" src="https://www.instadp.com/images/articles/guide-to-reposting-content-on-instagram.jpg" alt="Your Complete Guide to Reposting Content on Instagram"></div>
+								<div class="title">Your Complete Guide to Reposting Content on Instagram</div>
+			</a>
+		</div>
+				<div class="article">
+			<a class="link" href="article/8/how-to-clear-your-instagram-search-history.html">
+								<div class="thumbnail"><img class="img" src="https://www.instadp.com/images/articles/How-to-Clear-Your-Instagram-Search-History.png" alt="How to Clear Your Instagram Search History"></div>
+								<div class="title">How to Clear Your Instagram Search History</div>
+			</a>
+		</div>
+				<div class="article">
+			<a class="link" href="article/15/how-to-download-your-favorite-instagram-story.html">
+								<div class="thumbnail"><img class="img" src="https://www.instadp.com/images/articles/How-to-Download-your-Favorite-Instagram-Story.png" alt="How to Download your Favorite Instagram Story"></div>
+								<div class="title">How to Download your Favorite Instagram Story</div>
+			</a>
+		</div>
+				<div class="article">
+			<a class="link" href="article/6/look-through-instagram-pictures-without-accidentally-liking-them.html">
+								<div class="thumbnail"><img class="img" src="https://www.instadp.com/images/articles/Look-through-Instagram-Pictures-without-Accidentally-Liking-Them.png" alt="Look through Instagram Pictures without Accidentally Liking Them"></div>
+								<div class="title">Look through Instagram Pictures without Accidentally Liking Them</div>
+			</a>
+		</div>
+				<div class="article">
+			<a class="link" href="article/12/disable-anyone-from-tagging-you-on-instagram-without-your-permission.html">
+								<div class="thumbnail"><img class="img" src="https://www.instadp.com/images/articles/Disable-Anyone-from-Tagging-You-on-Instagram-without-Your-Permission.png" alt="Disable Anyone from Tagging You on Instagram without Your Permission"></div>
+								<div class="title">Disable Anyone from Tagging You on Instagram without Your Permission</div>
+			</a>
+		</div>
+			</div>
+</div>
+
+	</div>
+</div>
+-->
+
+<!-- Sidebar -->
+<div class="sidebar">
+
+	<a href="" class="logo">Instadp</a>
+
+	<span class="title">Menu</span>
+	<ul class="menu-list">
+		<li class="item"><a class="link" href="/"><i class="icon home"></i>Home</a>
+		<li class="item"><a class="link" href="articles"><i class="icon tips"></i>Blog</a>
+		<li class="item"><a class="link" href="contact"><i class="icon contact"></i>Contact</a>
+	</ul>
+
+	<span class="title">Tools</span>
+	<ul class="tools-list">
+		<li class="item"><a class="link" href="instagram-tools"><i class="icon instagram"></i>Instagram Tools</a>
+		<li class="item"><a class="link" href="tiktok-tools"><i class="icon tiktok"></i>TikTok Tools</a>
+	</ul>
+
+	<div class="darkmode-options">
+		<div class="text">Dark Mode</div>
+		<div class="button">
+			<label class="switch">
+				<input class="checkbox" type="checkbox" checked>
+				<span class="slider round"></span>
+			</label>
+		</div>
+	</div>
+
+</div>
+
+<div class="prevent-click"></div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$('.menu-btn').click(function() {
+	  $('body').addClass('sb-toggled');
+	  $('.prevent-click').fadeIn();
+	});
+	$('body .prevent-click').click(function() {
+	  $('body').removeClass('sb-toggled');
+	  $('.prevent-click').fadeOut();
+	});
+	$('.search-history .toggle-bar').click(function() {
+	  $('.search-history').toggleClass('toggled');
+	});
+	$('.darkmode-options .button .switch input').change(function() {
+		if(this.checked) {
+			_addCookie('1', 'dark_mode');
+			$('body').addClass('darkmode');
+		} else {
+			_addCookie('0', 'dark_mode');
+			$('body').removeClass('darkmode');
+		}
+	});
+});
+</script>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>ITNAARI<br>The Original</h3>
+      <p>Mr Naari is the owner of this site.</p>
+      <div class="social-links">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-github"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-stack-overflow"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; Copyright <strong><span>ITNAARI - The Original</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        Made with &hearts; by  <a href="https://www.facebook.com/narayan.vishwkarma.1">Narayan Singh</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+
+<!-- Scripts -->
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-45158477-5', 'auto');
+
+	var trackOutLink = function(url) {
+		ga('send', 'event', 'outbound', 'click', url, {
+		'transport': 'beacon',
+		'hitCallback': function(){document.location = url;}
+	   });
+	}
+</script>
+<script type="text/javascript">
+	ga('send', 'pageview', 'instagram-tools/profile-picture-downloader');
+</script>
+
+
+</body>
+</html>
